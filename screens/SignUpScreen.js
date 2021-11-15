@@ -19,6 +19,9 @@ import Feather from 'react-native-vector-icons/Feather';
 const SignInScreen = ({navigation}) => {
   const [data, setData] = React.useState({
     username: '',
+    firstName: '',
+    lastName: '',
+    apiKey: '',
     password: '',
     confirm_password: '',
     check_textInputChange: false,
@@ -42,6 +45,24 @@ const SignInScreen = ({navigation}) => {
     }
   };
 
+  const handleFirstName = val => {
+    setData({
+      ...data,
+      firstName: val,
+    });
+  };
+  const handleLastName = val => {
+    setData({
+      ...data,
+      lastName: val,
+    });
+  };
+  const handleApiKey = val => {
+    setData({
+      ...data,
+      apiKey: val,
+    });
+  };
   const handlePasswordChange = val => {
     setData({
       ...data,
@@ -92,6 +113,63 @@ const SignInScreen = ({navigation}) => {
                 <Feather name="check-circle" color="green" size={20} />
               </Animatable.View>
             ) : null}
+          </View>
+
+          <Text
+            style={[
+              styles.text_footer,
+              {
+                marginTop: 35,
+              },
+            ]}>
+            First Name
+          </Text>
+          <View style={styles.action}>
+            <FontAwesome name="user-o" color="#05375a" size={20} />
+            <TextInput
+              placeholder="Your Username"
+              style={styles.textInput}
+              autoCapitalize="none"
+              onChangeText={val => handleFirstName(val)}
+            />
+          </View>
+
+          <Text
+            style={[
+              styles.text_footer,
+              {
+                marginTop: 35,
+              },
+            ]}>
+            Last Name
+          </Text>
+          <View style={styles.action}>
+            <FontAwesome name="user-o" color="#05375a" size={20} />
+            <TextInput
+              placeholder="Your Username"
+              style={styles.textInput}
+              autoCapitalize="none"
+              onChangeText={val => handleLastName(val)}
+            />
+          </View>
+
+          <Text
+            style={[
+              styles.text_footer,
+              {
+                marginTop: 35,
+              },
+            ]}>
+            API key
+          </Text>
+          <View style={styles.action}>
+            <Feather name="lock" color="#05375a" size={20} />
+            <TextInput
+              placeholder="Your Username"
+              style={styles.textInput}
+              autoCapitalize="none"
+              onChangeText={val => handleApiKey(val)}
+            />
           </View>
 
           <Text

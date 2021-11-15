@@ -6,10 +6,12 @@ import {Dimensions} from 'react-native';
 import DownloadButton from '../components/DownloadButton';
 import DownloadData from '../components/DownloadData';
 import {getCurrentDate, getCurrentTime, getString} from '../util';
-import { downloadProducts, getProductsDownloadTimestamp } from './InventoryDetails';
+import {
+  downloadProducts,
+  getProductsDownloadTimestamp,
+} from './InventoryDetails';
 
 const DownloadScreen = ({navigation}) => {
-
   const [press, setPress] = useState(false);
   const [loading, setLoading] = useState(true);
   const [timestamp, setTimestamp] = useState('');
@@ -19,16 +21,24 @@ const DownloadScreen = ({navigation}) => {
       setLoading(false);
       setTimestamp(ts);
     });
-    return <View><Text>Initializing ...</Text></View>
+    return (
+      <View>
+        <Text>Initializing ...</Text>
+      </View>
+    );
   }
 
   function getDownloadDate() {
     // eslint-disable-next-line prettier/prettier
-    return timestamp == null || timestamp.length == 0 ? '' : timestamp.split(' ')[0];
+    return timestamp == null || timestamp.length == 0
+      ? ''
+      : timestamp.split(' ')[0];
   }
 
   function getDownloadTime() {
-    return timestamp == null || timestamp.length == 0 ? '' : timestamp.split(' ')[1];
+    return timestamp == null || timestamp.length == 0
+      ? ''
+      : timestamp.split(' ')[1];
   }
 
   return (
@@ -49,14 +59,13 @@ const DownloadScreen = ({navigation}) => {
       )}
       <DownloadButton
         title="Download"
-        onPress={() => { 
+        onPress={() => {
           downloadProducts();
           setPress(!press);
         }}></DownloadButton>
     </View>
   );
 };
-
 
 export default DownloadScreen;
 

@@ -22,6 +22,9 @@ import DateDetails from './DateDetails';
 import CompleteDetails from './CompleteDetails';
 import InventoryCountScreen from './InventoryCountScreen';
 import PartDetailsScreen from './PartDetailsScreen';
+import CamScannerPart from './CamScannerpart';
+import CamScannerLoc from './CamScannerloc';
+import ScanLocationScreen from './ScanLocationScreen';
 //import Warehouse from './Warehouse';
 
 const HomeStack = createStackNavigator();
@@ -61,7 +64,7 @@ const MainTabScreen = () => (
     />
     <Tab.Screen
       name="Scanner"
-      component={CameraScanner}
+      component={InventoryCountScreen}
       options={{
         tabBarLabel: 'Scanner',
         tabBarColor: '#1E1E1E',
@@ -136,6 +139,8 @@ const HomeStackScreen = ({navigation}) => (
     />
     <HomeStack.Screen name="Inventory" component={InventoryDetails} />
     <HomeStack.Screen name="Scanner" component={CameraScanner} />
+    <HomeStack.Screen name="ScannerLoc" component={CamScannerLoc} />
+    <HomeStack.Screen name="ScannerPart" component={CamScannerPart} />
     <HomeStack.Screen name="Settings" component={SettingsScreen} />
     <HomeStack.Screen name="Downloads" component={DownloadScreen} />
     <HomeStack.Screen name="Warehouse" component={Warehouse} />
@@ -145,6 +150,14 @@ const HomeStackScreen = ({navigation}) => (
     <HomeStack.Screen name="Date" component={DateDetails} />
     <HomeStack.Screen name="Countscreen" component={InventoryCountScreen} />
     <HomeStack.Screen name="PartDetail" component={PartDetailsScreen} />
+    <HomeStack.Screen
+      name="ScanLocationScreen"
+      component={ScanLocationScreen}
+    />
+    <HomeStack.Screen
+      name="InventoryCountScreen"
+      component={InventoryCountScreen}
+    />
   </HomeStack.Navigator>
 );
 

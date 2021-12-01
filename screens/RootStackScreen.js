@@ -14,6 +14,9 @@ import UploadScreen from './Upload';
 import Warehouse from './Warehouse';
 import AccountDetails from './AccountDetails';
 import DateDetails from './DateDetails';
+import CamScannerLoc from './CamScannerloc';
+import CamScannerPart from './CamScannerpart';
+import ScanLocationScreen from './ScanLocationScreen';
 
 const RootStack = createStackNavigator();
 
@@ -24,6 +27,8 @@ const RootStackScreen = ({navigation}) => (
     <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
     <RootStack.Screen name="DBTestProduct" component={DBTestProduct} />
     <RootStack.Screen name="CameraScanner" component={CameraScanner} />
+    <RootStack.Screen name="CamScannerLoc" component={CamScannerLoc} />
+    <RootStack.Screen name="CamScannerPart" component={CamScannerPart} />
     <RootStack.Screen name="InventoryDetails" component={InventoryDetails} />
     <RootStack.Screen name="SettingsScreen" component={SettingsScreen} />
     <RootStack.Screen name="DownloadScreen" component={DownloadScreen} />
@@ -31,6 +36,10 @@ const RootStackScreen = ({navigation}) => (
     <RootStack.Screen name="Warehouse" component={Warehouse} />
     <RootStack.Screen name="AccountDetails" component={AccountDetails} />
     <RootStack.Screen name="DateDetails" component={DateDetails} />
+    <RootStack.Screen
+      name="ScanLocationScreen"
+      component={ScanLocationScreen}
+    />
   </RootStack.Navigator>
 );
 

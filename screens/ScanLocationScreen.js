@@ -1,7 +1,8 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, View, Text, TextInput} from 'react-native';
 import DownloadButton from '../components/DownloadButton';
-function ScanLocationScreen(props) {
+function ScanLocationScreen({navigation}) {
   return (
     <View style={{backgroundColor: 'white', flex: 1}}>
       <View
@@ -52,8 +53,11 @@ function ScanLocationScreen(props) {
         7. SKU #: UGG-BB-PUR-504
       </Text>
       <View style={{paddingHorizontal: 39}}>
-        <DownloadButton title="Scan Location" />
-        <DownloadButton title="Back" />
+        {/* <DownloadButton
+          title="Scan Location"
+          onclick={() => navigation.navigate('Scanner')}
+        />
+        <DownloadButton title="Back" /> */}
       </View>
     </View>
   );

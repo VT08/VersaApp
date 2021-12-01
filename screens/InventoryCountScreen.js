@@ -12,11 +12,11 @@ function InventoryCountScreen({navigation}) {
       <View style={{margin: 40, paddingTop: 100}}>
         <DownloadButton
           title="Scan Part"
-          onclick={() => navigation.navigate('Scanner')}
+          onclick={() => navigation.navigate('ScannerPart')}
         />
         <DownloadButton
           title="Scan Location"
-          onclick={() => navigation.navigate('Scanner')}
+          onclick={() => navigation.navigate('ScannerLoc')}
         />
       </View>
     </View>
